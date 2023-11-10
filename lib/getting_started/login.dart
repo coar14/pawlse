@@ -8,6 +8,7 @@ class Login extends StatelessWidget {
     return const Scaffold(
       body: SizedBox(
         height: 50,
+        width: 50,
         child: Text('Gwapo'),
       ),
     );
