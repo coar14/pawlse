@@ -5,11 +5,16 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SizedBox(
-        height: 50,
-        width: 50,
-        child: Text('Gwapo'),
+    return SafeArea(
+      child: Scaffold(
+        body: SizedBox(
+          height: 50,
+          width: 50,
+          child: Text(
+            'Gwapo',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+        ),
       ),
     );
   }
