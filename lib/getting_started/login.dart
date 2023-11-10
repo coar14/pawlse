@@ -5,9 +5,10 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: const Text('Gwapo'),
+    return const Scaffold(
+      body: SizedBox(
+        height: 50,
+        child: Text('Gwapo'),
       ),
     );
   }
