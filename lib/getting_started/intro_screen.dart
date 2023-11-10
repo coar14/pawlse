@@ -9,10 +9,8 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IntroductionScreen(
-        
         globalBackgroundColor: Colors.white,
-        scrollPhysics: BouncingScrollPhysics(),
-        
+        scrollPhysics: const BouncingScrollPhysics(),
         pages: [
           PageViewModel(
             titleWidget: Text(
@@ -33,7 +31,8 @@ class IntroScreen extends StatelessWidget {
             ),
           ),
           PageViewModel(
-            titleWidget: const Text('',
+            titleWidget: const Text(
+              '',
             ),
             body:
                 " At Pawlse, we're all about connecting users with animal shelters. We believe in the power of collaboration to make a difference. Whether you're a pet owner or an animal lover, you can be a part of something bigger—changing lives, one paw at a time.",
@@ -44,7 +43,8 @@ class IntroScreen extends StatelessWidget {
             ),
           ),
           PageViewModel(
-            titleWidget: const Text('',
+            titleWidget: const Text(
+              '',
             ),
             body:
                 "Pawlse is more than just a platform; it's a community of support. We're here to help one another navigate the joys and challenges of pet ownership. From pet care tips to sharing stories, we're in this together.",
@@ -55,7 +55,8 @@ class IntroScreen extends StatelessWidget {
             ),
           ),
           PageViewModel(
-            titleWidget: const Text('',
+            titleWidget: const Text(
+              '',
             ),
             body:
                 "Ready to embark on this exciting journey? Join our furry family today, where pets and owners thrive. Make a positive impact on the world of pets. Join us!",
@@ -69,7 +70,6 @@ class IntroScreen extends StatelessWidget {
         onDone: () {
           _showBottomSheet(context);
         },
-
         onSkip: () {
           Navigator.pushNamed(context, "login");
         },
@@ -107,27 +107,29 @@ class IntroScreen extends StatelessWidget {
   }
 }
 
-
 void _showBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
       return Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/img/org.png',
-            height: 150,
-          ),
-          Image.asset(
-            'assets/img/petlover.png',
-            height: 150,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/img/org.png',
+                width: 200,
+              ),
+              Image.asset('assets/img/petlover.png', width: 200),
+            ],
           ),
           ElevatedButton(
             onPressed: () {
               // Add your functionality for the button here
             },
-            child: Text('Join Us'),
+            child: const Text('Join Us'),
           ),
         ],
       );
