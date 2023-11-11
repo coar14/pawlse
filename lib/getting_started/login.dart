@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax/iconsax.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  late bool showPass = false;
+  late String icondata;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,6 +61,7 @@ class LoginScreen extends StatelessWidget {
                         height: 16,
                       ),
                       TextFormField(
+                        obscureText: showPass,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(14),
@@ -61,8 +70,14 @@ class LoginScreen extends StatelessWidget {
                               Icons.lock,
                             ),
                             labelText: 'Password',
-                            suffixIcon:
-                                const Icon(Icons.remove_red_eye_outlined)),
+                            suffixIcon: IconButton(
+                              icon: const Icon(Iconsax.eye_slash),
+                              onPressed: () {
+                                setState(() {
+                                  showPass = !showPass;
+                                });
+                              },
+                            )),
                       ),
                     ],
                   ),
