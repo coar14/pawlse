@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawlse/getting_started/intro_screen.dart';
 import 'package:pawlse/getting_started/login.dart';
+import 'package:pawlse/getting_started/signup.dart';
 import 'package:pawlse/themes/font_theme.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const IntroScreen(),
         'login': (context) => const LoginScreen(),
+        'signup': (context) => const SignUpScreen()
       },
     );
   }
