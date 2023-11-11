@@ -10,8 +10,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  late bool showPass = false;
-  late String icondata;
+  late bool showPass = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,8 +19,8 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //header
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -34,11 +33,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    Text(
-                      'I love you, thank you for using our app once again, Login now',
-                      textAlign: TextAlign.justify,
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    )
+                    Text('Thank you for supporting Pawlse, login now.',
+                        textAlign: TextAlign.justify,
+                        style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.black)))
                   ],
                 ),
                 const SizedBox(
@@ -82,7 +83,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -107,7 +107,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 34),
                 SizedBox(
                     width: double.infinity,
@@ -147,7 +146,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             horizontal: 20, vertical: 16),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'signup');
+                    },
                     child: const Text('Create Account'),
                   ),
                 ),
