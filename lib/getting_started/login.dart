@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   late bool showPass = true;
+  late bool check = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -89,8 +90,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       children: [
                         Checkbox(
-                          value: true,
-                          onChanged: (value) {},
+                          value: check,
+                          onChanged: (value) {
+                            setState(() {
+                              check = !check;
+                            });
+                          },
                         ),
                         Text(
                           'Remember Me',
@@ -102,7 +107,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {},
                       child: Text(
                         'Forgot Password',
-                        style: Theme.of(context).textTheme.headlineSmall,
+                        style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                                color: Colors.blue, fontSize: 14)),
                       ),
                     ),
                   ],
@@ -147,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14))),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'signup');
+                      _showBottomSheet(context);
                     },
                     child: const Text('Create Account'),
                   ),
@@ -225,4 +232,100 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+}
+
+void _showBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return Padding(
+        padding: const EdgeInsets.all(30),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sign up as',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 15),
+              const Divider(
+                color: Colors.grey,
+                indent: 20,
+                endIndent: 20,
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'signupOrg');
+                    },
+                    child: Card(
+                      elevation: 2,
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Organization',
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                            Image.asset(
+                              'assets/img/org.png',
+                              width: MediaQuery.of(context).size.width * .3,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'signup');
+                    },
+                    child: Card(
+                      elevation: 2,
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Pet Enthusiast',
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                            Image.asset('assets/img/petlover.png',
+                                width: MediaQuery.of(context).size.width * .3)
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }
