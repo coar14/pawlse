@@ -73,7 +73,7 @@ class IntroScreen extends StatelessWidget {
             _showBottomSheet(context);
           },
           onSkip: () {
-            Navigator.pushNamed(context, "login");
+            Navigator.pushNamed(context, "auth");
           },
           showSkipButton: true,
           skip: Text(
