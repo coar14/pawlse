@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
@@ -12,6 +13,30 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   late bool showPass = true;
   late bool check = false;
+
+  Future signIn() async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _email.text.trim(), password: _password.text.trim());
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      if (e.code == 'user-not-found') {
+      } else if (e.code == 'wrong-password') {}
+    }
+  }
+
+  final _email = TextEditingController();
+  final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: _email,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(14),
@@ -57,12 +83,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             prefixIcon: const Icon(
                               Icons.person,
                             ),
-                            labelText: 'Username'),
+                            labelText: 'E-mail'),
                       ),
                       const SizedBox(
                         height: 16,
                       ),
                       TextFormField(
+                        controller: _password,
                         obscureText: showPass,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
@@ -130,7 +157,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   color: Colors.white)),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12))),
-                      onPressed: () {},
+                      onPressed: () {
+                        signIn();
+                      },
                       child: const Text('Sign In'),
                     )),
                 const SizedBox(
