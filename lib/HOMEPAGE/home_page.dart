@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pawlse/COMPONENTS/bottom_%20nav.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const MyBottomNav(selectedIndex: 0),
       body: SafeArea(
         child: SingleChildScrollView(
             padding: const EdgeInsets.all(15),
