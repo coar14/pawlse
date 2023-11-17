@@ -26,144 +26,179 @@ class _EventDetailsState extends State<EventDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              CarouselSlider.builder(
-                itemCount: event().eventList.length,
-                itemBuilder: (context, index, realIndex) {
-                  final curImage = event().eventList[index];
-                  return buildImage(curImage, index);
+        body: Column(
+      children: [
+        Stack(
+          children: [
+            CarouselSlider.builder(
+              itemCount: event().eventList.length,
+              itemBuilder: (context, index, realIndex) {
+                final curImage = event().eventList[index];
+                return buildImage(curImage, index);
+              },
+              options: CarouselOptions(
+                viewportFraction: 1,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _current = index;
+                  });
                 },
-                options: CarouselOptions(
-                  viewportFraction: 1,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _current = index;
-                    });
-                  },
-                  autoPlay: true,
-                  initialPage: _current,
-                  height: MediaQuery.of(context).size.height * .5,
+                autoPlay: true,
+                initialPage: _current,
+                height: MediaQuery.of(context).size.height * .5,
+              ),
+            ),
+            Positioned(
+                top: MediaQuery.of(context).size.height * 0.05,
+                left: MediaQuery.of(context).size.width * 0.05,
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(18)),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back_ios_outlined,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop(context);
+                    },
+                  ),
+                )),
+            Positioned.fill(
+              top: MediaQuery.of(context).size.height * 0.48,
+              child: Container(
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(18),
+                    topRight: Radius.circular(18),
+                  ),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
-              Positioned.fill(
-                top: MediaQuery.of(context).size.height * 0.48,
-                child: Container(
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(18),
-                      topRight: Radius.circular(18),
-                    ),
-                    color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ],
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height * .50,
+          child: ListView(
+            children: [
+              Column(
+                children: [
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          PoppinsText(
+                              text: 'Free Vaccination',
+                              size: 24,
+                              font: FontWeight.bold,
+                              color: Color(0xFF8A98E1)),
+                          PoppinsText(
+                              text: 'Straynation Cebu & PAWS',
+                              size: 18,
+                              font: FontWeight.w600,
+                              color: Colors.black)
+                        ],
+                      )
+                    ],
                   ),
-                ),
+                  const SizedBox(height: 20),
+                  const Row(
+                    children: [
+                      Icon(Icons.calendar_month_outlined),
+                      SizedBox(width: 5),
+                      PoppinsText(
+                          text: 'December 11, 2023',
+                          size: 16,
+                          font: FontWeight.w600,
+                          color: Colors.black)
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  const Row(
+                    children: [
+                      Icon(Icons.access_time),
+                      SizedBox(width: 5),
+                      PoppinsText(
+                          text: '9:30AM - 4:30PM',
+                          size: 16,
+                          font: FontWeight.w600,
+                          color: Colors.black)
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  const Row(
+                    children: [
+                      Icon(Icons.location_on_outlined),
+                      SizedBox(width: 5),
+                      PoppinsText(
+                          text: 'Brgy. Punta Princesa, Cebu City',
+                          size: 16,
+                          font: FontWeight.w600,
+                          color: Colors.black)
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Card(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: PoppinsText(
+                          text:
+                              "Exciting news for pet parents! We're offering FREE vaccinations for your furry companions. Keep them healthy and happy without worrying about the cost.Exciting news for pet parents! We're offering FREE vaccinations for your furry companions. Keep them healthy and happy without worrying about the cost.",
+                          size: 14,
+                          font: FontWeight.w500,
+                          color: Colors.black),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.redAccent,
+                            padding: const EdgeInsets.symmetric(vertical: 18),
+                            textStyle: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white)),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12))),
+                        onPressed: () {},
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(Icons.favorite_border_rounded),
+                            SizedBox(width: 5),
+                            PoppinsText(
+                                text: 'Interested',
+                                size: 20,
+                                font: FontWeight.w600,
+                                color: Colors.white)
+                          ],
+                        ),
+                      )),
+                  const SizedBox(height: 15),
+                ],
               ),
             ],
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            width: double.infinity,
-            child: Column(
-              children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
-                      children: [
-                        PoppinsText(
-                            text: 'Free Vaccination',
-                            size: 24,
-                            font: FontWeight.bold,
-                            color: Color(0xFF8A98E1)),
-                        PoppinsText(
-                            text: 'Straynation Cebu & PAWS',
-                            size: 18,
-                            font: FontWeight.w600,
-                            color: Colors.black)
-                      ],
-                    )
-                  ],
-                ),
-                const SizedBox(height: 20),
-                const Row(
-                  children: [
-                    Icon(Icons.calendar_month_outlined),
-                    SizedBox(width: 5),
-                    PoppinsText(
-                        text: 'December 11, 2023',
-                        size: 16,
-                        font: FontWeight.w600,
-                        color: Colors.black)
-                  ],
-                ),
-                const SizedBox(height: 5),
-                const Row(
-                  children: [
-                    Icon(Icons.access_time),
-                    SizedBox(width: 5),
-                    PoppinsText(
-                        text: '9:30AM - 4:30PM',
-                        size: 16,
-                        font: FontWeight.w600,
-                        color: Colors.black)
-                  ],
-                ),
-                const SizedBox(height: 5),
-                const Row(
-                  children: [
-                    Icon(Icons.location_on_outlined),
-                    SizedBox(width: 5),
-                    PoppinsText(
-                        text: 'Brgy. Punta Princesa, Cebu City',
-                        size: 16,
-                        font: FontWeight.w600,
-                        color: Colors.black)
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Card(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: PoppinsText(
-                        text:
-                            "Exciting news for pet parents! We're offering FREE vaccinations for your furry companions. Keep them healthy and happy without worrying about the cost.Exciting news for pet parents! We're offering FREE vaccinations for your furry companions. Keep them healthy and happy without worrying about the cost.",
-                        size: 14,
-                        font: FontWeight.w500,
-                        color: Colors.black),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.redAccent,
-                          padding: const EdgeInsets.symmetric(vertical: 18),
-                          textStyle: GoogleFonts.poppins(
-                              textStyle: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white)),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12))),
-                      onPressed: () {},
-                      child: const Text('Interested'),
-                    )),
-              ],
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     ));
   }
 

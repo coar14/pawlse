@@ -17,7 +17,6 @@ class _EventSectionUserState extends State<EventSectionUser> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: const MyBottomNav(selectedIndex: 3),
         floatingActionButton: FloatingActionButton(
           elevation: 1,
           backgroundColor: Colors.redAccent,

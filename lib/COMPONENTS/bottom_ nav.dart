@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyBottomNav extends StatelessWidget {
   final int selectedIndex;
-  const MyBottomNav({super.key, required this.selectedIndex});
+  final ValueChanged<int> onTabTapped;
+  const MyBottomNav(
+      {super.key, required this.selectedIndex, required this.onTabTapped});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,7 @@ class MyBottomNav extends StatelessWidget {
       showUnselectedLabels: false,
       iconSize: 35,
       type: BottomNavigationBarType.fixed,
+      onTap: onTabTapped,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.feed_outlined), label: '1'),
         BottomNavigationBarItem(icon: Icon(Icons.notifications), label: '1'),
