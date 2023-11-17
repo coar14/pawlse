@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:pawlse/COMPONENTS/bottom_%20nav.dart';
 import 'package:pawlse/COMPONENTS/event_card.dart';
 import 'package:pawlse/COMPONENTS/search_bar.dart';
 import 'package:pawlse/THEMES/poppins.dart';
