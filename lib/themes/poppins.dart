@@ -18,6 +18,7 @@ class PoppinsText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: TextAlign.justify,
       style: GoogleFonts.poppins(
           textStyle: TextStyle(color: color, fontSize: size, fontWeight: font)),
     );
