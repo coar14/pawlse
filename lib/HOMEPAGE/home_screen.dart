@@ -38,12 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         size: 24,
                         font: FontWeight.bold,
                         color: Color.fromARGB(255, 17, 17, 17)),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/img/logo.png'))),
+                    GestureDetector(
+                      onTap: () => signOutUser(),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/img/logo.png'))),
+                      ),
                     )
                   ],
                 ),
