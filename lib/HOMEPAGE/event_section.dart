@@ -34,7 +34,7 @@ class _EventSectionUserState extends State<EventSectionUser> {
             icon: const Icon(Iconsax.arrow_left),
             iconSize: 30,
             onPressed: () {
-              Navigator.of(context).pop(context);
+              Navigator.pushReplacementNamed(context, 'home_page');
             },
           ),
           title: const PoppinsText(
@@ -55,7 +55,8 @@ class _EventSectionUserState extends State<EventSectionUser> {
                   endIndent: 5,
                   thickness: 0.5,
                 ),
-                const MySearchBar(),
+                const SizedBox(height: 10),
+                const MySearchBar(text: 'Search an upcoming event'),
                 EventCard(),
               ],
             ),

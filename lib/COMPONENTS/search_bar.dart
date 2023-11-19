@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MySearchBar extends StatelessWidget {
-  const MySearchBar({super.key});
+  final text;
+  const MySearchBar({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class MySearchBar extends StatelessWidget {
                 borderSide:
                     const BorderSide(color: Color(0xFF8A98E1), width: 2)),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-            hintText: 'Search event',
+            hintText: text,
             suffixIcon: const Icon(
               Icons.search,
               size: 30,

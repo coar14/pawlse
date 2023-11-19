@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: MyBottomNav(
-          selectedIndex: 0,
+          selectedIndex: _selectedIndex,
           onTabTapped: (value) {
             setState(() {
               _selectedIndex = value;
