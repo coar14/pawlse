@@ -299,7 +299,7 @@ void _showBottomSheet(BuildContext context) {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'signupOrg');
+                      Navigator.pushReplacementNamed(context, 'signupOrg');
                     },
                     child: Card(
                       elevation: 2,
@@ -326,7 +326,7 @@ void _showBottomSheet(BuildContext context) {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'signup');
+                      Navigator.pushReplacementNamed(context, 'signup');
                     },
                     child: Card(
                       elevation: 2,

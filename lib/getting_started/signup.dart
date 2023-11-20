@@ -264,7 +264,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   alignment: Alignment.center,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'login');
+                      Navigator.pushReplacementNamed(context, 'auth');
                     },
                     child: RichText(
                       text: TextSpan(

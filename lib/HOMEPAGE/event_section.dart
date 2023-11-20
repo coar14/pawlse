@@ -34,7 +34,7 @@ class _EventSectionUserState extends State<EventSectionUser> {
             icon: const Icon(Iconsax.arrow_left),
             iconSize: 30,
             onPressed: () {
-              Navigator.pushReplacementNamed(context, 'home_page');
+              Navigator.pushReplacementNamed(context, 'auth');
             },
           ),
           title: const PoppinsText(

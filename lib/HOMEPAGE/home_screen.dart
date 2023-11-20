@@ -39,7 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         font: FontWeight.bold,
                         color: Color.fromARGB(255, 17, 17, 17)),
                     GestureDetector(
-                      onTap: () => signOutUser(),
+                      onTap: () {
+                        signOutUser();
+                        Navigator.pushNamed(context, 'auth');
+                      },
                       child: Container(
                         width: 50,
                         height: 50,

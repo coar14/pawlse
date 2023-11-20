@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
+// ignore: camel_case_types
 class postDetails {
   final postDets = [
     [
