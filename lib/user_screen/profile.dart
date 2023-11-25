@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
+import 'package:pawlse/COMPONENTS/drawer.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
 class profilePost {
@@ -101,24 +102,8 @@ class _UserProfileState extends State<UserProfile> {
       length: 2,
       child: SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0,
-              leading: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Iconsax.user_add,
-                    size: 35,
-                  )),
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu,
-                    size: 35,
-                  ),
-                )
-              ]),
+          appBar: AppBar(title: const Text('')),
+          endDrawer: const MyDrawer(),
           body: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
@@ -157,7 +142,7 @@ class _UserProfileState extends State<UserProfile> {
                                   font: FontWeight.w600,
                                   color: Colors.black),
                               PoppinsText(
-                                  text: 'Dog and Rabbit Owner',
+                                  text: '@aneyaluv',
                                   size: 14,
                                   font: FontWeight.w500,
                                   color: Colors.black)
@@ -239,17 +224,25 @@ class _UserProfileState extends State<UserProfile> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const PoppinsText(
-                        text: '@aneyaluv',
-                        size: 13,
-                        font: FontWeight.w500,
-                        color: Colors.black87),
-                    const PoppinsText(
-                        text:
-                            "Hey there! I'm Anne, a passionate animal lover with a heart full of love for my fur babies. ",
-                        size: 13,
-                        font: FontWeight.w500,
-                        color: Colors.black87),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          PoppinsText(
+                              text: 'Dog and Rabbit Owner',
+                              size: 14,
+                              font: FontWeight.w600,
+                              color: Colors.black87),
+                          PoppinsText(
+                              text:
+                                  "Hey there! I'm Anne, a passionate animal lover with a heart full of love for my fur babies. ",
+                              size: 13,
+                              font: FontWeight.w500,
+                              color: Colors.black87),
+                        ],
+                      ),
+                    ),
                     const SizedBox(height: 10),
                     const SizedBox(
                       height: 30,

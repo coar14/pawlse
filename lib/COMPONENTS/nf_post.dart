@@ -58,7 +58,7 @@ class _NFPostState extends State<NFPost> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * .60,
+      height: MediaQuery.of(context).size.height * .65,
       child: ListView.builder(
         itemCount: postDetails().postDets.length,
         itemBuilder: (context, index) {

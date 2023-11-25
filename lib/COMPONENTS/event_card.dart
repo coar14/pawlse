@@ -27,7 +27,6 @@ class EventCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Card(
               shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: Color(0xFF8A98E1)),
                   borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -78,8 +77,8 @@ class EventCard extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             gradient: const LinearGradient(
                                                 colors: [
-                                                  Colors.redAccent,
-                                                  Colors.redAccent
+                                                  Color(0xFF8A98E1),
+                                                  Color(0xFF8A98E1)
                                                 ]),
                                             borderRadius:
                                                 BorderRadius.circular(10),
