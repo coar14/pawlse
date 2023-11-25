@@ -78,13 +78,36 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Icon(
                           Icons.menu_open_sharp,
                           size: 45,
+                          color: Colors.black,
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: SizedBox(
+                  height: 30,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: hashTags.length,
+                    itemBuilder: (context, index) {
+                      final current = hashTags[index];
+                      return Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: PoppinsText(
+                              text: current,
+                              size: 16,
+                              font: FontWeight.bold,
+                              color: const Color(0xFF8A98E1)));
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
               const NFPost()
             ],
           ),
@@ -92,4 +115,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  final hashTags = ['Dogs', 'Cats', 'Birds', 'Rooster', 'Fish', 'Spiders'];
 }

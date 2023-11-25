@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
 // ignore: camel_case_types
 class postDetails {
   final postDets = [
     [
-      'assets/img/jam.png',
+      'assets/img/jam.jpg',
       'Anne Junto',
       '@aneyaluv',
       '3hrs ago',
@@ -13,18 +14,20 @@ class postDetails {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
       'assets/img/d3.jpg',
       'assets/img/d2.jpg',
-      'assets/img/d1.jpg'
+      'assets/img/d1.jpg',
+      '56'
     ],
     [
       'assets/avatar/man.png',
       'Felix Cena Jr.',
       '@fzappy',
       '11hrs ago',
-      '#Birds',
+      '#Birds, #Cats, #Dogs',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
-      'assets/img/b1.jpg',
-      'assets/img/b2.jpg',
-      'assets/img/b3.jpg'
+      'assets/img/b3.jpg',
+      'assets/img/d2.jpg',
+      'assets/img/1.jpg',
+      '43'
     ],
     [
       'assets/avatar/woman.png',
@@ -35,19 +38,27 @@ class postDetails {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
       'assets/img/1.jpg',
       'assets/img/2.jpg',
-      'assets/img/3.jpg'
+      'assets/img/3.jpg',
+      '39'
     ],
   ];
 }
 
-class NFPost extends StatelessWidget {
+class NFPost extends StatefulWidget {
   const NFPost({super.key});
 
+  @override
+  State<NFPost> createState() => _NFPostState();
+}
+
+class _NFPostState extends State<NFPost> {
+  late bool tap = true;
+  late int heartCount = 1;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * .65,
+      height: MediaQuery.of(context).size.height * .60,
       child: ListView.builder(
         itemCount: postDetails().postDets.length,
         itemBuilder: (context, index) {
@@ -116,50 +127,92 @@ class NFPost extends StatelessWidget {
                         font: FontWeight.w500,
                         color: const Color.fromARGB(255, 20, 20, 20)),
                   ),
-                  SizedBox(
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 237, 238, 240),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20))),
                     height: MediaQuery.of(context).size.height * .20,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * .40,
-                          height: MediaQuery.of(context).size.height * .20,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(current[6]),
-                                  fit: BoxFit.cover)),
+                        InstaImageViewer(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * .40,
+                            height: MediaQuery.of(context).size.height * .20,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(current[6]),
+                                    fit: BoxFit.contain)),
+                          ),
                         ),
                         const SizedBox(width: 5),
-                        Container(
-                          width: MediaQuery.of(context).size.width * .40,
-                          height: MediaQuery.of(context).size.height * .20,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(current[7]),
-                                  fit: BoxFit.cover)),
+                        InstaImageViewer(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * .40,
+                            height: MediaQuery.of(context).size.height * .20,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(current[7]),
+                                    fit: BoxFit.contain)),
+                          ),
                         ),
                         const SizedBox(width: 5),
-                        Container(
-                          width: MediaQuery.of(context).size.width * .40,
-                          height: MediaQuery.of(context).size.height * .20,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(current[8]),
-                                  fit: BoxFit.cover)),
+                        InstaImageViewer(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * .40,
+                            height: MediaQuery.of(context).size.height * .20,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(current[8]),
+                                    fit: BoxFit.contain)),
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
                     child: Row(
                       children: [
-                        Icon(Icons.favorite_border, size: 35),
-                        SizedBox(width: 15),
-                        Icon(Icons.comment_rounded, size: 35)
+                        GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                tap = !tap;
+                                if (tap == false) {
+                                  heartCount--;
+                                } else {
+                                  heartCount++;
+                                }
+                              });
+                            },
+                            child: Column(
+                              children: [
+                                Icon(
+                                    tap == true
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color: tap == true
+                                        ? Colors.redAccent
+                                        : Colors.black87,
+                                    size: 35),
+                                Text('$heartCount')
+                              ],
+                            )),
+                        const SizedBox(width: 15),
+                        Column(children: [
+                          const Icon(
+                            Icons.comment_rounded,
+                            size: 35,
+                            color: Colors.black54,
+                          ),
+                          Text(current[9])
+                        ])
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

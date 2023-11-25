@@ -17,7 +17,7 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .75,
+      height: MediaQuery.of(context).size.height * .70,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: _eventsList._events.length,

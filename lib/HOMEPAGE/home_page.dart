@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pawlse/COMPONENTS/bottom_%20nav.dart';
 import 'package:pawlse/HOMEPAGE/event_section.dart';
 import 'package:pawlse/HOMEPAGE/home_screen.dart';
+import 'package:pawlse/user_screen/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,6 +33,6 @@ class _HomePageState extends State<HomePage> {
     const EventSectionUser(),
     const HomeScreen(),
     const EventSectionUser(),
-    const HomeScreen(),
+    const UserProfile()
   ];
 }
