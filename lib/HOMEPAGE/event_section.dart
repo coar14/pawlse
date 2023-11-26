@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:pawlse/COMPONENTS/bottom_%20nav.dart';
 import 'package:pawlse/COMPONENTS/event_card.dart';
 import 'package:pawlse/COMPONENTS/search_bar.dart';
 import 'package:pawlse/THEMES/poppins.dart';
@@ -17,13 +16,14 @@ class _EventSectionUserState extends State<EventSectionUser> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: const MyBottomNav(selectedIndex: 3),
         floatingActionButton: FloatingActionButton(
           elevation: 1,
           backgroundColor: Colors.redAccent,
           shape: const CircleBorder(
               side: BorderSide(width: 1, color: Colors.white)),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, 'create_event');
+          },
           child: const Icon(
             Iconsax.add,
             size: 30,
@@ -32,13 +32,6 @@ class _EventSectionUserState extends State<EventSectionUser> {
         ),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: IconButton(
-            icon: const Icon(Iconsax.arrow_left),
-            iconSize: 30,
-            onPressed: () {
-              Navigator.of(context).pop(context);
-            },
-          ),
           title: const PoppinsText(
               text: 'Events',
               size: 24,
@@ -57,7 +50,8 @@ class _EventSectionUserState extends State<EventSectionUser> {
                   endIndent: 5,
                   thickness: 0.5,
                 ),
-                const MySearchBar(),
+                const SizedBox(height: 10),
+                const MySearchBar(hintText: 'Search an upcoming event'),
                 EventCard(),
               ],
             ),

@@ -17,7 +17,7 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .75,
+      height: MediaQuery.of(context).size.height * .70,
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: _eventsList._events.length,
@@ -27,7 +27,6 @@ class EventCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Card(
               shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: Color(0xFF8A98E1)),
                   borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -35,13 +34,14 @@ class EventCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 200,
+                      height: 150,
                       decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(16),
                               topRight: Radius.circular(16)),
                           image: DecorationImage(
                               image: AssetImage(cardEvent[0]),
+                              alignment: Alignment.topCenter,
                               fit: BoxFit.cover)),
                     ),
                     Container(
@@ -54,7 +54,7 @@ class EventCard extends StatelessWidget {
                             PoppinsText(
                                 color: Colors.black,
                                 font: FontWeight.bold,
-                                size: 20,
+                                size: 18,
                                 text: cardEvent[1]),
                             PoppinsText(
                                 color: Colors.grey,
@@ -78,8 +78,8 @@ class EventCard extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             gradient: const LinearGradient(
                                                 colors: [
-                                                  Colors.redAccent,
-                                                  Colors.redAccent
+                                                  Color(0xFF8A98E1),
+                                                  Color(0xFF8A98E1)
                                                 ]),
                                             borderRadius:
                                                 BorderRadius.circular(10),
@@ -99,13 +99,13 @@ class EventCard extends StatelessWidget {
                                               children: [
                                                 PoppinsText(
                                                     text: 'Full Details',
-                                                    size: 18,
-                                                    font: FontWeight.w600,
+                                                    size: 16,
+                                                    font: FontWeight.w700,
                                                     color: Colors.white),
                                                 SizedBox(width: 5),
                                                 Icon(
                                                   Icons.arrow_forward_rounded,
-                                                  size: 30,
+                                                  size: 25,
                                                   color: Colors.white,
                                                 ),
                                               ],

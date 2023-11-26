@@ -1,7 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:pawlse/CHAT/chat_home.dart';
 import 'package:pawlse/COMPONENTS/bottom_%20nav.dart';
+import 'package:pawlse/HOMEPAGE/event_section.dart';
+import 'package:pawlse/HOMEPAGE/home_screen.dart';
+import 'package:pawlse/HOMEPAGE/notification.dart';
+import 'package:pawlse/user_screen/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,56 +14,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final user = FirebaseAuth.instance.currentUser!;
-
-  Future signOutUser() async {
-    await FirebaseAuth.instance.signOut();
-  }
-
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const MyBottomNav(selectedIndex: 0),
-      body: SafeArea(
-        child: SingleChildScrollView(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                Text(
-                  'Hello ${user.email}!',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.purple[400],
-                          padding: const EdgeInsets.symmetric(vertical: 18),
-                          textStyle: GoogleFonts.poppins(
-                              textStyle: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white)),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12))),
-                      onPressed: () {
-                        signOutUser();
-                      },
-                      child: const Text('Sign Out'),
-                    ))
-              ],
-            )),
-      ),
-    );
+        bottomNavigationBar: MyBottomNav(
+          selectedIndex: _selectedIndex,
+          onTabTapped: (value) {
+            setState(() {
+              _selectedIndex = value;
+            });
+          },
+        ),
+        body: pages[_selectedIndex]);
   }
+
+  final List<Widget> pages = [
+    const HomeScreen(),
+    const MyNotifications(),
+    const ChatScreen(),
+    const EventSectionUser(),
+    const UserProfile()
+  ];
 }

@@ -321,7 +321,7 @@ class _SignUpOrgState extends State<SignUpOrg> {
                   alignment: Alignment.center,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'login');
+                      Navigator.pushReplacementNamed(context, 'auth');
                     },
                     child: RichText(
                       text: TextSpan(
