@@ -72,8 +72,8 @@ class SingleNotification extends StatelessWidget {
                 ),
               ),
               ListTile(
-                tileColor: const Color.fromARGB(179, 247, 244, 244),
-                trailing: const Icon(Icons.remove_circle_rounded),
+                tileColor: const Color.fromARGB(255, 246, 247, 248),
+                trailing: const Icon(Icons.arrow_circle_right_rounded),
                 title: PoppinsText(
                     text: current[1],
                     size: 15,
@@ -90,8 +90,8 @@ class SingleNotification extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               ListTile(
-                tileColor: const Color.fromARGB(179, 247, 244, 244),
-                trailing: const Icon(Icons.remove_circle_rounded),
+                tileColor: const Color.fromARGB(255, 246, 247, 248),
+                trailing: const Icon(Icons.arrow_circle_right_rounded),
                 title: PoppinsText(
                     text: current[3],
                     size: 15,

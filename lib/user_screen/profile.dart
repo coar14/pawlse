@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:pawlse/COMPONENTS/drawer.dart';
 import 'package:pawlse/THEMES/poppins.dart';

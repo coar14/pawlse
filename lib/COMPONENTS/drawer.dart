@@ -80,6 +80,17 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           const ListTile(
             title: PoppinsText(
+                text: 'Verified Organizations',
+                size: 16,
+                font: FontWeight.w500,
+                color: Colors.black87),
+            leading: Icon(
+              Icons.verified_user_rounded,
+              size: 40,
+            ),
+          ),
+          const ListTile(
+            title: PoppinsText(
                 text: 'Customer Support',
                 size: 16,
                 font: FontWeight.w500,

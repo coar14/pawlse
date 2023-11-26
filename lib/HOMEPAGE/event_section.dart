@@ -21,7 +21,9 @@ class _EventSectionUserState extends State<EventSectionUser> {
           backgroundColor: Colors.redAccent,
           shape: const CircleBorder(
               side: BorderSide(width: 1, color: Colors.white)),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, 'create_event');
+          },
           child: const Icon(
             Iconsax.add,
             size: 30,
@@ -30,13 +32,6 @@ class _EventSectionUserState extends State<EventSectionUser> {
         ),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: IconButton(
-            icon: const Icon(Iconsax.arrow_left),
-            iconSize: 30,
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, 'auth');
-            },
-          ),
           title: const PoppinsText(
               text: 'Events',
               size: 24,
@@ -56,7 +51,7 @@ class _EventSectionUserState extends State<EventSectionUser> {
                   thickness: 0.5,
                 ),
                 const SizedBox(height: 10),
-                const MySearchBar(text: 'Search an upcoming event'),
+                const MySearchBar(hintText: 'Search an upcoming event'),
                 EventCard(),
               ],
             ),

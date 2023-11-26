@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:pawlse/COMPONENTS/single_notification.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
@@ -17,13 +16,6 @@ class _MyNotificationsState extends State<MyNotifications> {
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
-            leading: IconButton(
-              icon: const Icon(Iconsax.arrow_left),
-              iconSize: 30,
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, 'auth');
-              },
-            ),
             title: const PoppinsText(
                 text: 'Notification',
                 size: 24,

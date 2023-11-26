@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pawlse/CHAT/chatbox.dart';
+import 'package:pawlse/EVENT_SECTION/create_event.dart';
+import 'package:pawlse/HOMEPAGE/create_content.dart';
 import 'package:pawlse/HOMEPAGE/home_page.dart';
 import 'package:pawlse/HOMEPAGE/notification.dart';
 import 'package:pawlse/getting_started/auth_page.dart';
@@ -35,7 +38,10 @@ class MyApp extends StatelessWidget {
         'signup': (context) => const SignUpScreen(),
         'signupOrg': (context) => const SignUpOrg(),
         'edit_profile': (context) => const EditProfile(),
-        'notification': (context) => MyNotifications(),
+        'notification': (context) => const MyNotifications(),
+        'create_post': (context) => const CreatePost(),
+        'create_event': (context) => const CreateEvent(),
+        'chatbox': (context) => const ChatBox()
       },
     );
   }

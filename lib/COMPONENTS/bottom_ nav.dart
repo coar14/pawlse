@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyBottomNav extends StatelessWidget {
   final int selectedIndex;
@@ -11,19 +14,68 @@ class MyBottomNav extends StatelessWidget {
     return BottomNavigationBar(
       selectedIconTheme: const IconThemeData(color: Color(0xFF8A98E1)),
       currentIndex: selectedIndex,
-      backgroundColor: Colors.white70,
-      elevation: 1,
-      showSelectedLabels: false,
+      backgroundColor: Colors.white,
+      elevation: 0.5,
+      showSelectedLabels: true,
       showUnselectedLabels: false,
-      iconSize: 35,
       type: BottomNavigationBarType.fixed,
       onTap: onTabTapped,
-      items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.feed_outlined), label: '1'),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications), label: '1'),
-        BottomNavigationBarItem(icon: Icon(Icons.create), label: '1'),
-        BottomNavigationBarItem(icon: Icon(Icons.event), label: '1'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: '1'),
+      items: [
+        BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/home1.svg',
+              width: 35,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/home2.svg',
+              color: const Color(0xFF8A98E1),
+              width: 35,
+            ),
+            label: 'Home'),
+        BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/notif1.svg',
+              width: 35,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/notif2.svg',
+              color: const Color(0xFF8A98E1),
+              width: 35,
+            ),
+            label: 'Notification'),
+        BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/message1.svg',
+              width: 35,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/message2.svg',
+              color: const Color(0xFF8A98E1),
+              width: 35,
+            ),
+            label: 'Chat'),
+        BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/event1.svg',
+              width: 35,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/event2.svg',
+              color: const Color(0xFF8A98E1),
+              width: 35,
+            ),
+            label: 'Event'),
+        BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/icons/person1.svg',
+              width: 35,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/person2.svg',
+              color: const Color(0xFF8A98E1),
+              width: 35,
+            ),
+            label: 'Profile'),
       ],
     );
   }

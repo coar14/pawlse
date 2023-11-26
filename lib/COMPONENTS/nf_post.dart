@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
-// ignore: camel_case_types
 class postDetails {
   final postDets = [
     [
@@ -45,20 +44,28 @@ class postDetails {
 }
 
 class NFPost extends StatefulWidget {
-  const NFPost({super.key});
+  const NFPost({Key? key}) : super(key: key);
 
   @override
   State<NFPost> createState() => _NFPostState();
 }
 
 class _NFPostState extends State<NFPost> {
-  late bool tap = true;
-  late int heartCount = 1;
+  late List<bool> tapStates;
+  late List<int> heartCounts;
+
+  @override
+  void initState() {
+    super.initState();
+    tapStates = List.generate(postDetails().postDets.length, (index) => true);
+    heartCounts = List.generate(postDetails().postDets.length, (index) => 29);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * .65,
+      height: MediaQuery.of(context).size.height * 0.65,
       child: ListView.builder(
         itemCount: postDetails().postDets.length,
         itemBuilder: (context, index) {
@@ -85,33 +92,35 @@ class _NFPostState extends State<NFPost> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 PoppinsText(
-                                    text: current[1],
-                                    size: 16,
-                                    font: FontWeight.w500,
-                                    color: const Color.fromARGB(255, 0, 0, 0)),
+                                  text: current[1],
+                                  size: 16,
+                                  font: FontWeight.w500,
+                                  color: const Color.fromARGB(255, 0, 0, 0),
+                                ),
                                 PoppinsText(
-                                    text: current[2],
-                                    size: 12,
-                                    font: FontWeight.w500,
-                                    color:
-                                        const Color.fromARGB(255, 48, 48, 48))
+                                  text: current[2],
+                                  size: 12,
+                                  font: FontWeight.w500,
+                                  color: const Color.fromARGB(255, 48, 48, 48),
+                                )
                               ],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 PoppinsText(
-                                    text: current[3],
-                                    size: 12,
-                                    font: FontWeight.w400,
-                                    color:
-                                        const Color.fromARGB(255, 48, 48, 48)),
+                                  text: current[3],
+                                  size: 12,
+                                  font: FontWeight.w400,
+                                  color: const Color.fromARGB(255, 48, 48, 48),
+                                ),
                                 const SizedBox(height: 3),
                                 PoppinsText(
-                                    text: current[4],
-                                    size: 12,
-                                    font: FontWeight.w500,
-                                    color: Colors.black)
+                                  text: current[4],
+                                  size: 12,
+                                  font: FontWeight.w500,
+                                  color: Colors.black,
+                                )
                               ],
                             )
                           ],
@@ -122,52 +131,61 @@ class _NFPostState extends State<NFPost> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     child: PoppinsText(
-                        text: current[5],
-                        size: 14,
-                        font: FontWeight.w500,
-                        color: const Color.fromARGB(255, 20, 20, 20)),
+                      text: current[5],
+                      size: 14,
+                      font: FontWeight.w500,
+                      color: const Color.fromARGB(255, 20, 20, 20),
+                    ),
                   ),
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 237, 238, 240),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            bottomLeft: Radius.circular(20))),
-                    height: MediaQuery.of(context).size.height * .20,
+                      color: Color.fromARGB(255, 246, 247, 248),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    height: MediaQuery.of(context).size.height * 0.20,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
                         InstaImageViewer(
                           child: Container(
-                            width: MediaQuery.of(context).size.width * .40,
-                            height: MediaQuery.of(context).size.height * .20,
+                            width: MediaQuery.of(context).size.width * 0.40,
+                            height: MediaQuery.of(context).size.height * 0.20,
                             decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(current[6]),
-                                    fit: BoxFit.contain)),
+                              image: DecorationImage(
+                                image: AssetImage(current[6]),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           ),
                         ),
                         const SizedBox(width: 5),
                         InstaImageViewer(
                           child: Container(
-                            width: MediaQuery.of(context).size.width * .40,
-                            height: MediaQuery.of(context).size.height * .20,
+                            width: MediaQuery.of(context).size.width * 0.40,
+                            height: MediaQuery.of(context).size.height * 0.20,
                             decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(current[7]),
-                                    fit: BoxFit.contain)),
+                              image: DecorationImage(
+                                image: AssetImage(current[7]),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           ),
                         ),
                         const SizedBox(width: 5),
                         InstaImageViewer(
                           child: Container(
-                            width: MediaQuery.of(context).size.width * .40,
-                            height: MediaQuery.of(context).size.height * .20,
+                            width: MediaQuery.of(context).size.width * 0.40,
+                            height: MediaQuery.of(context).size.height * 0.20,
                             decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(current[8]),
-                                    fit: BoxFit.contain)),
+                              image: DecorationImage(
+                                image: AssetImage(current[8]),
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -178,38 +196,42 @@ class _NFPostState extends State<NFPost> {
                     child: Row(
                       children: [
                         GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                tap = !tap;
-                                if (tap == false) {
-                                  heartCount--;
-                                } else {
-                                  heartCount++;
-                                }
-                              });
-                            },
-                            child: Column(
-                              children: [
-                                Icon(
-                                    tap == true
-                                        ? Icons.favorite
-                                        : Icons.favorite_border,
-                                    color: tap == true
-                                        ? Colors.redAccent
-                                        : Colors.black87,
-                                    size: 35),
-                                Text('$heartCount')
-                              ],
-                            )),
-                        const SizedBox(width: 15),
-                        Column(children: [
-                          const Icon(
-                            Icons.comment_rounded,
-                            size: 35,
-                            color: Colors.black54,
+                          onTap: () {
+                            setState(() {
+                              tapStates[index] = !tapStates[index];
+                              if (tapStates[index] == false) {
+                                heartCounts[index]++;
+                              } else {
+                                heartCounts[index]--;
+                              }
+                            });
+                          },
+                          child: Column(
+                            children: [
+                              Icon(
+                                tapStates[index]
+                                    ? Icons.favorite_border
+                                    : Icons.favorite,
+                                color: tapStates[index]
+                                    ? Colors.black87
+                                    : Colors.redAccent,
+                                size: 35,
+                              ),
+                              Text('${heartCounts[index]}'),
+                            ],
                           ),
-                          Text(current[9])
-                        ])
+                        ),
+                        const SizedBox(width: 15),
+                        Column(
+                          children: [
+                            const Icon(
+                              Icons.comment_rounded,
+                              size: 35,
+                              color: Colors.black54,
+                            ),
+                            Text(current[9]),
+                          ],
+                        )
                       ],
                     ),
                   ),
