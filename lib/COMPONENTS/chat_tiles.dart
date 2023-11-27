@@ -6,12 +6,12 @@ class recepientList {
     [
       'assets/avatar/man.png',
       'Felix Cena Jr.',
-      'Hello Anne! I like your post about your dogs. Would you like to pet mine?'
+      'Hello Anne! I like your posts about your dogs. I hope we could be friends here...'
     ],
     [
       'assets/avatar/woman.png',
       'Maricor Masong',
-      'Hello Anne! Would you like to join an event about dogs? If yes, say aw aw...'
+      'Hello Anne! Would you like to join an event about dogs? If yes, we...'
     ],
     [
       'assets/img/straynation.jpg',
@@ -21,7 +21,7 @@ class recepientList {
     [
       'assets/avatar/man1.png',
       'Xilef Anec',
-      'Hi Anne, would you like to be my owner? I can be whatever pet you want me to be. Rawr'
+      'Hi Anne! I saw your post about your rabbit, is it hard to have them as pets?'
     ],
     [
       'assets/avatar/man.png',

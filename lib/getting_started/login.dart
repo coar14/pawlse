@@ -14,24 +14,42 @@ class _LoginScreenState extends State<LoginScreen> {
   late bool showPass = true;
   late bool check = false;
 
-  Future signIn() async {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
+  Future<void> signIn() async {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Row(
+          children: [
+            CircularProgressIndicator(),
+            SizedBox(width: 16),
+            Text('Signing in...'),
+          ],
+        ),
+        duration: Duration(seconds: 5), // Adjust the duration as needed
+      ),
     );
 
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: _email.text.trim(), password: _password.text.trim());
-      Navigator.pop(context);
+        email: _email.text.trim(),
+        password: _password.text.trim(),
+      );
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      String errorMessage = 'Authentication failed';
+
       if (e.code == 'user-not-found') {
-      } else if (e.code == 'wrong-password') {}
+        errorMessage = 'User not found';
+      } else if (e.code == 'wrong-password') {
+        errorMessage = 'Incorrect password';
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(errorMessage),
+          duration: const Duration(seconds: 5), // Adjust the duration as needed
+        ),
+      );
     }
   }
 

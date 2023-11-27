@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pawlse/COMPONENTS/drawer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pawlse/COMPONENTS/nf_post.dart';
 import 'package:pawlse/COMPONENTS/pet_tags.dart';
 import 'package:pawlse/COMPONENTS/search_bar.dart';
@@ -32,12 +32,22 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         appBar: AppBar(
+            backgroundColor: Colors.white,
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'org_list');
+                  },
+                  icon: SvgPicture.asset(
+                    'assets/img/organization.svg',
+                    width: 35,
+                  ))
+            ],
             title: const PoppinsText(
                 text: 'News Feed',
                 size: 24,
                 font: FontWeight.w600,
                 color: Colors.black87)),
-        endDrawer: const MyDrawer(),
         body: const SingleChildScrollView(
             child: Column(
           children: [

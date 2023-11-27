@@ -78,52 +78,56 @@ class _MyDrawerState extends State<MyDrawer> {
               size: 40,
             ),
           ),
-          const ListTile(
-            title: PoppinsText(
-                text: 'Verified Organizations',
-                size: 16,
-                font: FontWeight.w500,
-                color: Colors.black87),
-            leading: Icon(
-              Icons.verified_user_rounded,
-              size: 40,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, 'customer_support');
+            },
+            child: const ListTile(
+              title: PoppinsText(
+                  text: 'Customer Support',
+                  size: 16,
+                  font: FontWeight.w500,
+                  color: Colors.black87),
+              leading: Icon(
+                Icons.support_agent_rounded,
+                size: 40,
+              ),
             ),
           ),
-          const ListTile(
-            title: PoppinsText(
-                text: 'Customer Support',
-                size: 16,
-                font: FontWeight.w500,
-                color: Colors.black87),
-            leading: Icon(
-              Icons.support_agent_rounded,
-              size: 40,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, 'faq');
+            },
+            child: const ListTile(
+              title: PoppinsText(
+                  text: 'FAQs',
+                  size: 16,
+                  font: FontWeight.w500,
+                  color: Colors.black87),
+              leading: Icon(
+                Icons.question_answer_rounded,
+                size: 40,
+              ),
             ),
           ),
-          const ListTile(
-            title: PoppinsText(
-                text: 'FAQs',
-                size: 16,
-                font: FontWeight.w500,
-                color: Colors.black87),
-            leading: Icon(
-              Icons.question_answer_rounded,
-              size: 40,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              'Terms and Conditions',
-              textAlign: TextAlign.start,
-              style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                      color: Colors.black87,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500)),
-            ),
-            leading: const Icon(
-              Icons.feed_rounded,
-              size: 40,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, 'terms');
+            },
+            child: ListTile(
+              title: Text(
+                'Terms and Conditions',
+                textAlign: TextAlign.start,
+                style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                        color: Colors.black87,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500)),
+              ),
+              leading: const Icon(
+                Icons.feed_rounded,
+                size: 40,
+              ),
             ),
           ),
           const ListTile(
@@ -140,8 +144,44 @@ class _MyDrawerState extends State<MyDrawer> {
           const SizedBox(height: 30),
           GestureDetector(
             onTap: () {
-              signOutUser();
-              Navigator.pushNamed(context, 'auth');
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog.adaptive(
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            signOutUser();
+                            Navigator.pushNamed(context, 'auth');
+                          },
+                          child: const PoppinsText(
+                              text: 'Proceed',
+                              size: 15,
+                              font: FontWeight.w600,
+                              color: Colors.blueGrey)),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const PoppinsText(
+                              text: 'Cancel',
+                              size: 15,
+                              font: FontWeight.w600,
+                              color: Colors.blueAccent))
+                    ],
+                    title: const PoppinsText(
+                        text: 'Sign out',
+                        size: 18,
+                        font: FontWeight.w700,
+                        color: Colors.black87),
+                    content: const PoppinsText(
+                        text: 'Are you sure you want to sign out?',
+                        size: 14,
+                        font: FontWeight.w500,
+                        color: Colors.black87),
+                  );
+                },
+              );
             },
             child: Container(
               height: 45,

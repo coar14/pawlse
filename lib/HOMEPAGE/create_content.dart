@@ -62,20 +62,17 @@ class _CreatePostState extends State<CreatePost> {
                   hintText: 'Type here...',
                 ),
                 const AddPhotos(),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20),
                   child: ExpansionTile(
-                    shape: OutlineInputBorder(
-                        borderSide: const BorderSide(width: 0.5),
-                        gapPadding: 10,
-                        borderRadius: BorderRadius.circular(14)),
-                    leading: const Icon(Icons.people_alt_rounded),
-                    title: const PoppinsText(
+                    shape: Border.symmetric(horizontal: BorderSide.none),
+                    leading: Icon(Icons.people_alt_rounded),
+                    title: PoppinsText(
                         text: 'Audience',
                         size: 16,
                         font: FontWeight.w500,
                         color: Colors.black87),
-                    children: const [
+                    children: [
                       ListTile(
                         leading: Icon(Icons.public),
                         subtitle: PoppinsText(

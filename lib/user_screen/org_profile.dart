@@ -6,9 +6,9 @@ import 'package:pawlse/THEMES/poppins.dart';
 class profilePost {
   final userPost = [
     [
-      'assets/img/jam.jpg',
-      'Anne Junto',
-      '@aneyaluv',
+      'assets/img/straynation.jpg',
+      'Straynation Cebu',
+      '@straynationcebuofficial',
       '3hrs ago',
       '#Dogs',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
@@ -18,9 +18,9 @@ class profilePost {
       '56'
     ],
     [
-      'assets/img/jam.jpg',
-      'Anne Junto',
-      '@aneyaluv',
+      'assets/img/straynation.jpg',
+      'Straynation Cebu',
+      '@straynationcebuofficial',
       '11hrs ago',
       '#Birds, #Cats, #Dogs',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
@@ -30,9 +30,9 @@ class profilePost {
       '43'
     ],
     [
-      'assets/img/jam.jpg',
-      'Anne Junto',
-      '@aneyaluv',
+      'assets/img/straynation.jpg',
+      'Straynation Cebu',
+      '@straynationcebuofficial',
       '3d ago',
       '#Cats',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
@@ -85,14 +85,14 @@ class profileLikes {
   ];
 }
 
-class UserProfile extends StatefulWidget {
-  const UserProfile({super.key});
+class OrganizationProfile extends StatefulWidget {
+  const OrganizationProfile({super.key});
 
   @override
-  State<UserProfile> createState() => _UserProfileState();
+  State<OrganizationProfile> createState() => _OrganizationProfileState();
 }
 
-class _UserProfileState extends State<UserProfile> {
+class _OrganizationProfileState extends State<OrganizationProfile> {
   late bool tap = true;
   late int heartCount = 1;
   @override
@@ -102,6 +102,8 @@ class _UserProfileState extends State<UserProfile> {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
+            surfaceTintColor: Colors.white,
+            elevation: 0,
             title: const Text(''),
             backgroundColor: Colors.white,
           ),
@@ -123,7 +125,8 @@ class _UserProfileState extends State<UserProfile> {
                           backgroundIsTransparent: true,
                           child: SizedBox(
                             child: CircleAvatar(
-                              backgroundImage: AssetImage('assets/img/jam.jpg'),
+                              backgroundImage:
+                                  AssetImage('assets/img/straynation.jpg'),
                               radius: 45,
                             ),
                           ),
@@ -139,12 +142,12 @@ class _UserProfileState extends State<UserProfile> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               PoppinsText(
-                                  text: 'Anne Junto',
+                                  text: 'Straynation Cebu',
                                   size: 18,
                                   font: FontWeight.w600,
                                   color: Colors.black),
                               PoppinsText(
-                                  text: '@aneyaluv',
+                                  text: '@straynationcebuofficial',
                                   size: 14,
                                   font: FontWeight.w500,
                                   color: Colors.black)
@@ -163,7 +166,7 @@ class _UserProfileState extends State<UserProfile> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       PoppinsText(
-                                          text: '34',
+                                          text: '26',
                                           size: 13,
                                           font: FontWeight.w500,
                                           color: Colors.black),
@@ -186,7 +189,7 @@ class _UserProfileState extends State<UserProfile> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       PoppinsText(
-                                          text: '47',
+                                          text: '12.5k',
                                           size: 13,
                                           font: FontWeight.w500,
                                           color: Colors.black),
@@ -232,16 +235,44 @@ class _UserProfileState extends State<UserProfile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           PoppinsText(
-                              text: 'Dog and Rabbit Owner',
-                              size: 14,
-                              font: FontWeight.w600,
-                              color: Colors.black87),
-                          PoppinsText(
-                              text:
-                                  "Hey there! I'm Anne, a passionate animal lover with a heart full of love for my fur babies. ",
+                              text: "Tingloy,Cebu City, Philippines",
                               size: 13,
                               font: FontWeight.w500,
                               color: Colors.black87),
+                          PoppinsText(
+                              text: 'Straynation Cebu',
+                              size: 14,
+                              font: FontWeight.w600,
+                              color: Colors.black87),
+                          ExpansionTile(
+                            shape:
+                                Border.symmetric(horizontal: BorderSide.none),
+                            tilePadding: EdgeInsets.all(0),
+                            title: PoppinsText(
+                                text: 'About us',
+                                size: 14,
+                                font: FontWeight.w500,
+                                color: Colors.black87),
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  PoppinsText(
+                                      text:
+                                          "Welcome to Straynation Cebu, where compassion meets action in our mission to provide love, care, and a better life for stray dogs and cats. We constantly upload updates on our situation and achievement here @pawlse. You can help us do more by donating any kind of stuffs related to pets. ",
+                                      size: 13,
+                                      font: FontWeight.w500,
+                                      color: Colors.black87),
+                                  PoppinsText(
+                                      text:
+                                          "You can also send donation through our GCash: ",
+                                      size: 13,
+                                      font: FontWeight.w500,
+                                      color: Colors.black87),
+                                ],
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -265,7 +296,7 @@ class _UserProfileState extends State<UserProfile> {
                           ]),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * .55,
+                      height: MediaQuery.of(context).size.height * .60,
                       width: double.infinity,
                       child: TabBarView(children: [
                         SizedBox(

@@ -3,14 +3,13 @@ import 'package:iconsax/iconsax.dart';
 import 'package:pawlse/CHAT/message.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
-class ChatBox extends StatelessWidget {
-  const ChatBox({super.key});
+class SupportChat extends StatelessWidget {
+  const SupportChat({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          surfaceTintColor: Colors.white,
           backgroundColor: Colors.white,
           elevation: 0,
           leading: IconButton(
@@ -20,21 +19,20 @@ class ChatBox extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-          leadingWidth: 25,
           title: const ListTile(
               subtitle: PoppinsText(
-                  text: '@straynationcebuofficial',
+                  text: '@pawlse-support',
                   size: 13,
                   font: FontWeight.w500,
                   color: Colors.black87),
               title: PoppinsText(
-                  text: 'Straynation Cebu',
+                  text: 'Customer Service',
                   size: 16,
                   font: FontWeight.w500,
                   color: Colors.black87),
               leading: CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/img/straynation.jpg')))),
+                  backgroundImage: AssetImage('assets/img/logo.png')))),
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
@@ -53,19 +51,6 @@ class ChatBox extends StatelessWidget {
                       color: Color(0xFF8A98E1),
                       color2: Color.fromARGB(255, 255, 255, 255),
                       color3: Color(0xFF8A98E1)),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        PoppinsText(
-                            text: 'Chatting with Straynation Cebu',
-                            size: 15,
-                            font: FontWeight.w400,
-                            color: Color(0xFF8A98E1))
-                      ],
-                    ),
-                  ),
                   myMessage(
                     pos1: MainAxisAlignment.start,
                     pos2: CrossAxisAlignment.start,
@@ -99,10 +84,9 @@ class ChatBox extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 15),
-                height: 50,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              child: SizedBox(
+                height: 60,
                 width: double.infinity,
                 child: Row(
                   children: [
