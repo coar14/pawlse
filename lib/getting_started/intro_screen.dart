@@ -70,7 +70,7 @@ class IntroScreen extends StatelessWidget {
             ),
           ],
           onDone: () {
-            _showBottomSheet(context);
+            Navigator.pushReplacementNamed(context, "auth");
           },
           onSkip: () {
             Navigator.pushReplacementNamed(context, "auth");

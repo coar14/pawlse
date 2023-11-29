@@ -67,15 +67,20 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
             ),
           ),
-          const ListTile(
-            title: PoppinsText(
-                text: 'Membership Subscription',
-                size: 16,
-                font: FontWeight.w500,
-                color: Colors.black87),
-            leading: Icon(
-              Icons.verified_rounded,
-              size: 40,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, 'subs');
+            },
+            child: const ListTile(
+              title: PoppinsText(
+                  text: 'Membership Subscription',
+                  size: 16,
+                  font: FontWeight.w500,
+                  color: Colors.black87),
+              leading: Icon(
+                Icons.verified_rounded,
+                size: 40,
+              ),
             ),
           ),
           InkWell(
@@ -130,15 +135,20 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
             ),
           ),
-          const ListTile(
-            title: PoppinsText(
-                text: 'About Pawlse',
-                size: 16,
-                font: FontWeight.w500,
-                color: Colors.black87),
-            leading: Icon(
-              Icons.info,
-              size: 40,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, 'pawlse');
+            },
+            child: const ListTile(
+              title: PoppinsText(
+                  text: 'About Pawlse',
+                  size: 16,
+                  font: FontWeight.w500,
+                  color: Colors.black87),
+              leading: Icon(
+                Icons.info,
+                size: 40,
+              ),
             ),
           ),
           const SizedBox(height: 30),

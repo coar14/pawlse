@@ -187,7 +187,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 color: Colors.white)),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, 'auth');
+                    },
                     child: const Text('Create Account'),
                   ),
                 ),
@@ -257,31 +259,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 35,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacementNamed(context, 'auth');
-                    },
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Already have an account? ',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        children: const [
-                          TextSpan(
-                            text: 'Sign in',
-                            style: TextStyle(
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                // const SizedBox(
+                //   height: 35,
+                // ),
+                // Align(
+                //   alignment: Alignment.center,
+                //   child: GestureDetector(
+                //     onTap: () {
+                //       Navigator.pushReplacementNamed(context, 'auth');
+                //     },
+                //     child: RichText(
+                //       text: TextSpan(
+                //         text: 'Already have an account? ',
+                //         style: Theme.of(context).textTheme.headlineSmall,
+                //         children: const [
+                //           TextSpan(
+                //             text: 'Sign in',
+                //             style: TextStyle(
+                //               color: Colors.blue,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //   ),
+                // )
               ],
             ),
           ),

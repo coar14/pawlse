@@ -244,101 +244,38 @@ class _SignUpOrgState extends State<SignUpOrg> {
                                 color: Colors.white)),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, 'auth');
+                    },
                     child: const Text('Create Account'),
                   ),
                 ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: Divider(
-                        color: Colors.grey,
-                        thickness: .5,
-                        indent: 60,
-                        endIndent: 5,
-                      ),
-                    ),
-                    Text(
-                      'Or Sign up With',
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.grey),
-                    ),
-                    Flexible(
-                      child: Divider(
-                        color: Colors.grey,
-                        thickness: .5,
-                        indent: 5,
-                        endIndent: 60,
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 14,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Image(
-                              width: 30,
-                              height: 30,
-                              image: AssetImage('assets/icons/facebook.png'))),
-                    ),
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Image(
-                              width: 30,
-                              height: 30,
-                              image: AssetImage('assets/icons/google.png'))),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 35,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacementNamed(context, 'auth');
-                    },
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Already have an account? ',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        children: const [
-                          TextSpan(
-                            text: 'Sign in',
-                            style: TextStyle(
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+
+                // const SizedBox(
+                //   height: 35,
+                // ),
+                // Align(
+                //   alignment: Alignment.center,
+                //   child: GestureDetector(
+                //     onTap: () {
+                //       Navigator.pushReplacementNamed(context, 'auth');
+                //     },
+                //     child: RichText(
+                //       text: TextSpan(
+                //         text: 'Already have an account? ',
+                //         style: Theme.of(context).textTheme.headlineSmall,
+                //         children: const [
+                //           TextSpan(
+                //             text: 'Sign in',
+                //             style: TextStyle(
+                //               color: Colors.blue,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //   ),
+                // )
               ],
             ),
           ),

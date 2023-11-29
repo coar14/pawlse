@@ -242,10 +242,15 @@ class _NFPostState extends State<NFPost> {
                           const SizedBox(width: 15),
                           Column(
                             children: [
-                              const Icon(
-                                Icons.comment_rounded,
-                                size: 35,
-                                color: Colors.black54,
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'comment');
+                                },
+                                icon: const Icon(
+                                  Icons.comment_rounded,
+                                  size: 35,
+                                  color: Colors.black54,
+                                ),
                               ),
                               Text(current[9]),
                             ],

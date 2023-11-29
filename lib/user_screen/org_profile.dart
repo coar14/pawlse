@@ -22,10 +22,10 @@ class profilePost {
       'Straynation Cebu',
       '@straynationcebuofficial',
       '11hrs ago',
-      '#Birds, #Cats, #Dogs',
+      '#Cats,',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
-      'assets/img/b3.jpg',
-      'assets/img/d2.jpg',
+      'assets/img/3.jpg',
+      'assets/img/2.jpg',
       'assets/img/1.jpg',
       '43'
     ],

@@ -13,10 +13,13 @@ import 'package:pawlse/getting_started/signup.dart';
 import 'package:pawlse/getting_started/signup_org.dart';
 import 'package:pawlse/themes/font_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pawlse/user_screen/about_pawlse.dart';
 import 'package:pawlse/user_screen/edit_profile.dart';
 import 'package:pawlse/user_screen/faq.dart';
 import 'package:pawlse/user_screen/org_profile.dart';
+import 'package:pawlse/user_screen/subscription.dart';
 import 'package:pawlse/user_screen/terms_conditions.dart';
+import 'package:pawlse/user_screen/user_interaction.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -51,7 +54,10 @@ class MyApp extends StatelessWidget {
         'customer_support': (context) => const SupportChat(),
         'org_profile': (context) => const OrganizationProfile(),
         'terms': (context) => const TermsConditions(),
-        'faq': (context) => const FAQ()
+        'faq': (context) => const FAQ(),
+        'pawlse': (context) => const AboutPawlse(),
+        'subs': (context) => const Subscription(),
+        'comment': (context) => const CommentSection()
       },
     );
   }
