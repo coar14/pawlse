@@ -117,7 +117,7 @@ class _SubscriptionState extends State<Subscription> {
                               children: [
                                 PoppinsText(
                                     text: current[0],
-                                    size: 32,
+                                    size: 28,
                                     font: FontWeight.w600,
                                     color: Colors.white),
                                 const SizedBox(width: 20),
@@ -134,7 +134,7 @@ class _SubscriptionState extends State<Subscription> {
                                         height: 30,
                                         child: PoppinsText(
                                             text: current[2],
-                                            size: 13,
+                                            size: 12,
                                             font: FontWeight.w500,
                                             color: Colors.black87),
                                       )
@@ -156,7 +156,7 @@ class _SubscriptionState extends State<Subscription> {
                                     style: GoogleFonts.poppins(
                                         textStyle: const TextStyle(
                                             color: Colors.white,
-                                            fontSize: 26,
+                                            fontSize: 24,
                                             fontWeight: FontWeight.w600)),
                                   ),
                                   Text(
@@ -176,22 +176,22 @@ class _SubscriptionState extends State<Subscription> {
                               children: [
                                 PoppinsText(
                                     text: current[5],
-                                    size: 18,
+                                    size: 16,
                                     font: FontWeight.w500,
                                     color: Colors.white),
                                 PoppinsText(
                                     text: current[6],
-                                    size: 18,
+                                    size: 16,
                                     font: FontWeight.w500,
                                     color: Colors.white),
                                 PoppinsText(
                                     text: current[7],
-                                    size: 18,
+                                    size: 16,
                                     font: FontWeight.w500,
                                     color: Colors.white),
                                 PoppinsText(
                                     text: current[8],
-                                    size: 18,
+                                    size: 16,
                                     font: FontWeight.w500,
                                     color: Colors.white),
                               ],
@@ -244,7 +244,7 @@ class _SubscriptionState extends State<Subscription> {
                                   children: [
                                     PoppinsText(
                                         text: 'E-Wallet',
-                                        size: 24,
+                                        size: 22,
                                         font: FontWeight.w600,
                                         color: Colors.black87),
                                     PlanButton(text: 'G-Cash'),
@@ -259,7 +259,7 @@ class _SubscriptionState extends State<Subscription> {
                                   children: [
                                     PoppinsText(
                                         text: 'Bank',
-                                        size: 24,
+                                        size: 22,
                                         font: FontWeight.w600,
                                         color: Colors.black87),
                                     PlanButton(text: 'BPI'),

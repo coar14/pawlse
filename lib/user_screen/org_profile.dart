@@ -63,11 +63,11 @@ class profileLikes {
       'Felix Cena Jr.',
       '@fzappy',
       '11hrs ago',
-      '#Birds, #Cats, #Dogs',
+      '#Birds, #Dogs',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
       'assets/img/b3.jpg',
       'assets/img/d2.jpg',
-      'assets/img/1.jpg',
+      'assets/img/b1.jpg',
       '43'
     ],
     [
@@ -141,11 +141,20 @@ class _OrganizationProfileState extends State<OrganizationProfile> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              PoppinsText(
-                                  text: 'Straynation Cebu',
-                                  size: 18,
-                                  font: FontWeight.w600,
-                                  color: Colors.black),
+                              Row(
+                                children: [
+                                  PoppinsText(
+                                      text: 'Straynation Cebu',
+                                      size: 18,
+                                      font: FontWeight.w600,
+                                      color: Colors.black),
+                                  Icon(
+                                    Icons.verified_user_rounded,
+                                    color: Colors.blueAccent,
+                                    size: 25,
+                                  )
+                                ],
+                              ),
                               PoppinsText(
                                   text: '@straynationcebuofficial',
                                   size: 14,
@@ -296,7 +305,7 @@ class _OrganizationProfileState extends State<OrganizationProfile> {
                           ]),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * .60,
+                      height: MediaQuery.of(context).size.height * .55,
                       width: double.infinity,
                       child: TabBarView(children: [
                         SizedBox(
@@ -332,13 +341,25 @@ class _OrganizationProfileState extends State<OrganizationProfile> {
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    PoppinsText(
-                                                        text: current[1],
-                                                        size: 16,
-                                                        font: FontWeight.w500,
-                                                        color: const Color
-                                                            .fromARGB(
-                                                            255, 0, 0, 0)),
+                                                    Row(
+                                                      children: [
+                                                        PoppinsText(
+                                                            text: current[1],
+                                                            size: 16,
+                                                            font:
+                                                                FontWeight.w500,
+                                                            color: const Color
+                                                                .fromARGB(
+                                                                255, 0, 0, 0)),
+                                                        const Icon(
+                                                          Icons
+                                                              .verified_user_rounded,
+                                                          color:
+                                                              Colors.blueAccent,
+                                                          size: 20,
+                                                        )
+                                                      ],
+                                                    ),
                                                     PoppinsText(
                                                         text: current[2],
                                                         size: 12,
@@ -534,13 +555,25 @@ class _OrganizationProfileState extends State<OrganizationProfile> {
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    PoppinsText(
-                                                        text: current[1],
-                                                        size: 16,
-                                                        font: FontWeight.w500,
-                                                        color: const Color
-                                                            .fromARGB(
-                                                            255, 0, 0, 0)),
+                                                    Row(
+                                                      children: [
+                                                        PoppinsText(
+                                                            text: current[1],
+                                                            size: 16,
+                                                            font:
+                                                                FontWeight.w500,
+                                                            color: const Color
+                                                                .fromARGB(
+                                                                255, 0, 0, 0)),
+                                                        const Icon(
+                                                          Icons
+                                                              .verified_rounded,
+                                                          color:
+                                                              Colors.blueAccent,
+                                                          size: 20,
+                                                        )
+                                                      ],
+                                                    ),
                                                     PoppinsText(
                                                         text: current[2],
                                                         size: 12,

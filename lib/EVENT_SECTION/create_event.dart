@@ -102,6 +102,7 @@ class _CreateEventState extends State<CreateEvent> {
                         color: Colors.white),
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * .05),
               ],
             ),
           ]),

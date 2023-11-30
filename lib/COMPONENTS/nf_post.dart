@@ -33,7 +33,7 @@ class postDetails {
       'Felix Cena Jr.',
       '@fzappy',
       '11hrs ago',
-      '#Birds, #Cats, #Dogs',
+      '#Birds, #Dogs',
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat",
       'assets/img/b3.jpg',
       'assets/img/d2.jpg',
@@ -107,11 +107,21 @@ class _NFPostState extends State<NFPost> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  PoppinsText(
-                                    text: current[1],
-                                    size: 16,
-                                    font: FontWeight.w500,
-                                    color: const Color.fromARGB(255, 0, 0, 0),
+                                  Row(
+                                    children: [
+                                      PoppinsText(
+                                        text: current[1],
+                                        size: 16,
+                                        font: FontWeight.w500,
+                                        color:
+                                            const Color.fromARGB(255, 0, 0, 0),
+                                      ),
+                                      const Icon(
+                                        Icons.verified_rounded,
+                                        color: Colors.blueAccent,
+                                        size: 20,
+                                      )
+                                    ],
                                   ),
                                   PoppinsText(
                                     text: current[2],
@@ -242,11 +252,11 @@ class _NFPostState extends State<NFPost> {
                           const SizedBox(width: 15),
                           Column(
                             children: [
-                              IconButton(
-                                onPressed: () {
+                              GestureDetector(
+                                onTap: () {
                                   Navigator.pushNamed(context, 'comment');
                                 },
-                                icon: const Icon(
+                                child: const Icon(
                                   Icons.comment_rounded,
                                   size: 35,
                                   color: Colors.black54,

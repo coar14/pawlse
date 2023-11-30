@@ -20,7 +20,7 @@ class PlanButton extends StatelessWidget {
         alignment: Alignment.center,
         child: PoppinsText(
             text: text,
-            size: 18,
+            size: 15,
             font: FontWeight.w600,
             color: const Color(0xff8A98E1)),
       ),
