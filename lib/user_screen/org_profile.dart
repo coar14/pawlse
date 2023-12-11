@@ -175,12 +175,12 @@ class _OrganizationProfileState extends State<OrganizationProfile> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       PoppinsText(
-                                          text: '26',
+                                          text: '60',
                                           size: 13,
                                           font: FontWeight.w500,
                                           color: Colors.black),
                                       PoppinsText(
-                                          text: 'Following',
+                                          text: 'Members',
                                           size: 13,
                                           font: FontWeight.w500,
                                           color: Colors.black)
@@ -220,7 +220,7 @@ class _OrganizationProfileState extends State<OrganizationProfile> {
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 5),
                                     child: PoppinsText(
-                                        text: 'Add Friend',
+                                        text: 'Support',
                                         size: 12,
                                         font: FontWeight.w500,
                                         color: Color(0xFF8A98E1)),

@@ -4,9 +4,9 @@ import 'package:pawlse/THEMES/poppins.dart';
 
 class eventsList {
   final List _events = [
-    ['assets/img/event1.jpg', 'Rescue Roundup', 'NOV 18, 2023 AT 6:30PM'],
+    ['assets/img/2.jpg', 'Free Vaccination', 'DEC 11, 2023 AT 9:30AM'],
     ['assets/img/event2.jpg', 'Furry Friends Fair', 'NOV 30, 2023 AT 1:00PM'],
-    ['assets/img/2.jpg', 'Paws & Claws Jubilee', 'NOV 30, 2023 AT 1:00PM']
+    ['assets/img/d3.jpg', 'Paws & Claws Jubilee', 'NOV 30, 2023 AT 1:00PM']
   ];
 }
 
@@ -51,11 +51,31 @@ class EventCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 8),
-                            PoppinsText(
-                                color: Colors.black,
-                                font: FontWeight.bold,
-                                size: 18,
-                                text: cardEvent[1]),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                PoppinsText(
+                                    color: Colors.black,
+                                    font: FontWeight.bold,
+                                    size: 18,
+                                    text: cardEvent[1]),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: Colors.greenAccent,
+                                  ),
+                                  height: 30,
+                                  child: const PoppinsText(
+                                      text: 'Free',
+                                      size: 13,
+                                      font: FontWeight.w600,
+                                      color: Colors.white),
+                                )
+                              ],
+                            ),
                             PoppinsText(
                                 color: Colors.grey,
                                 font: FontWeight.w600,

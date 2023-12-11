@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pawlse/THEMES/poppins.dart';
 
 class SignUpOrg extends StatefulWidget {
   const SignUpOrg({super.key});
@@ -245,9 +246,38 @@ class _SignUpOrgState extends State<SignUpOrg> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, 'auth');
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog.adaptive(
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, 'auth');
+                                    },
+                                    child: const PoppinsText(
+                                        text: 'Ok',
+                                        size: 15,
+                                        font: FontWeight.w600,
+                                        color: Colors.blueGrey)),
+                              ],
+                              title: const PoppinsText(
+                                  text: 'Verification Process',
+                                  size: 18,
+                                  font: FontWeight.w700,
+                                  color: Colors.black87),
+                              content: Text(
+                                'The Pawlse Support team will review your submitted documents and will send you an email for further details.',
+                                style: GoogleFonts.poppins(
+                                    textStyle: const TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500)),
+                              ));
+                        },
+                      );
                     },
-                    child: const Text('Create Account'),
+                    child: const Text('Submit Application'),
                   ),
                 ),
 

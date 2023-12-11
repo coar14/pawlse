@@ -102,7 +102,7 @@ class _EventDetailsState extends State<EventDetails> {
                               font: FontWeight.bold,
                               color: Color(0xFF8A98E1)),
                           PoppinsText(
-                              text: 'Straynation Cebu & PAWS',
+                              text: 'Straynation Cebu',
                               size: 18,
                               font: FontWeight.w600,
                               color: Colors.black)
