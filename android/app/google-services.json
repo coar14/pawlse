@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "874591227885",
-    "project_id": "pawlse",
-    "storage_bucket": "pawlse.appspot.com"
+    "project_number": "1057016880885",
+    "project_id": "mobilepawlse",
+    "storage_bucket": "mobilepawlse.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:874591227885:android:339eb34e5968a65a95a1e4",
+        "mobilesdk_app_id": "1:1057016880885:android:c343825851dc587280efbc",
         "android_client_info": {
           "package_name": "com.example.pawlse"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA8jb6cboRBdEa3FtJtaeYsbu-5_7xDH-Q"
+          "current_key": "AIzaSyDBQu05xAabuSWuFNxlkZXVgTj6KiWBXuI"
         }
       ],
       "services": {

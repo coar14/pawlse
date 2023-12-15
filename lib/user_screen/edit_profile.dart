@@ -11,6 +11,10 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+  final TextEditingController name = TextEditingController();
+  final TextEditingController title = TextEditingController();
+  final TextEditingController bio = TextEditingController();
+  final TextEditingController accounts = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,21 +67,27 @@ class _EditProfileState extends State<EditProfile> {
                 ],
               ),
               const SizedBox(height: 25),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
                     MyTextField(
+                        textcontroller: name,
                         text: 'Modify Name',
                         lines: 1,
                         hintText: 'Type here...'),
                     MyTextField(
+                        textcontroller: title,
                         text: 'Pet Owner Title',
                         lines: 1,
                         hintText: 'Type here...'),
                     MyTextField(
-                        text: 'Modify Bio', lines: 1, hintText: 'Type here...'),
+                        textcontroller: bio,
+                        text: 'Modify Bio',
+                        lines: 1,
+                        hintText: 'Type here...'),
                     MyTextField(
+                        textcontroller: accounts,
                         text: 'Link external accounts',
                         lines: 1,
                         hintText: 'Type here...'),
