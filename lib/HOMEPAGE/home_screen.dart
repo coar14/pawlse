@@ -1,9 +1,22 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:pawlse/COMPONENTS/nf_post.dart';
 import 'package:pawlse/COMPONENTS/pet_tags.dart';
 import 'package:pawlse/COMPONENTS/search_bar.dart';
 import 'package:pawlse/THEMES/poppins.dart';
+
+class staticDetails {
+  final details = [
+    'assets/img/jam.jpg',
+    'Anne Junto',
+    '@aneyaluv',
+    'assets/img/d3.jpg',
+    'assets/img/d2.jpg',
+    'assets/img/d1.jpg',
+  ];
+}
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -76,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: PetTags()),
             SizedBox(height: 10),
-            NFPost()
+            NFPost(),
           ],
         )),
       ),

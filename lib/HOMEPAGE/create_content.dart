@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:pawlse/COMPONENTS/add_photos.dart';
 import 'package:pawlse/COMPONENTS/create_textfield.dart';
 import 'package:pawlse/COMPONENTS/pet_tags.dart';
+import 'package:pawlse/HOMEPAGE/upload_post.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
 class CreatePost extends StatefulWidget {
@@ -15,6 +17,7 @@ class CreatePost extends StatefulWidget {
 class _CreatePostState extends State<CreatePost> {
   TextEditingController tags = TextEditingController();
   TextEditingController desc = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,19 +127,36 @@ class _CreatePostState extends State<CreatePost> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 30),
-                  child: Container(
-                    decoration: BoxDecoration(
+                  child: GestureDetector(
+                    onTap: () async {
+                      // Assuming FirestoreMethods().uploadPost returns a Future
+                      await FirestoreMethods().uploadPost(
+                          desc.text, _auth.currentUser!.uid, tags.text);
+
+                      // Display a snackbar
+                      const snackBar = SnackBar(
+                        content: Text('Successfully Posted!'),
+                        duration: Duration(seconds: 2),
+                      );
+
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
                         color: Colors.redAccent,
-                        borderRadius: BorderRadius.circular(10)),
-                    width: MediaQuery.of(context).size.width * .5,
-                    height: 45,
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: PoppinsText(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      width: MediaQuery.of(context).size.width * .5,
+                      height: 45,
+                      child: const Align(
+                        alignment: Alignment.center,
+                        child: PoppinsText(
                           text: 'Create Post',
                           size: 16,
                           font: FontWeight.w600,
-                          color: Colors.white),
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ),
                 )

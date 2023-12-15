@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:pawlse/THEMES/poppins.dart';
 
+class staticDetails {
+  final details = [
+    'assets/img/jam.jpg',
+    'Anne Junto',
+    '@aneyaluv',
+    'assets/img/d3.jpg',
+    'assets/img/d2.jpg',
+    'assets/img/d1.jpg',
+  ];
+}
+
 class postDetails {
   final postDets = [
     [
