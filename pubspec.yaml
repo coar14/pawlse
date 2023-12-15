@@ -39,6 +39,7 @@ dependencies:
   iconsax: ^0.0.8
   image_picker: ^1.0.4
   carousel_slider: ^4.2.1
+  cloud_firestore: ^4.13.6
   firebase_auth: ^4.14.0
   firebase_core: ^2.22.0
   insta_image_viewer: ^1.0.2

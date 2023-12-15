@@ -44,37 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDn-RzswDGyckTJ0bqq27_ufzgVqVALIng',
-    appId: '1:874591227885:web:be783c4a5ade7a7195a1e4',
-    messagingSenderId: '874591227885',
-    projectId: 'pawlse',
-    authDomain: 'pawlse.firebaseapp.com',
-    storageBucket: 'pawlse.appspot.com',
+    apiKey: 'AIzaSyAtyRzN1wFjR-eEGkF6RSglIhTKfv5m6Vg',
+    appId: '1:1057016880885:web:c8b7f1af2361a1e580efbc',
+    messagingSenderId: '1057016880885',
+    projectId: 'mobilepawlse',
+    authDomain: 'mobilepawlse.firebaseapp.com',
+    storageBucket: 'mobilepawlse.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA8jb6cboRBdEa3FtJtaeYsbu-5_7xDH-Q',
-    appId: '1:874591227885:android:339eb34e5968a65a95a1e4',
-    messagingSenderId: '874591227885',
-    projectId: 'pawlse',
-    storageBucket: 'pawlse.appspot.com',
+    apiKey: 'AIzaSyDBQu05xAabuSWuFNxlkZXVgTj6KiWBXuI',
+    appId: '1:1057016880885:android:c343825851dc587280efbc',
+    messagingSenderId: '1057016880885',
+    projectId: 'mobilepawlse',
+    storageBucket: 'mobilepawlse.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCmC92rVome3MRVnmKW_bo0TJpJNl-i3eo',
-    appId: '1:874591227885:ios:0d18af26138cd3bc95a1e4',
-    messagingSenderId: '874591227885',
-    projectId: 'pawlse',
-    storageBucket: 'pawlse.appspot.com',
+    apiKey: 'AIzaSyCBy-EWmVKelioADm5PU7A3FtXIWn-iJO0',
+    appId: '1:1057016880885:ios:edc1fc4fdf376b5480efbc',
+    messagingSenderId: '1057016880885',
+    projectId: 'mobilepawlse',
+    storageBucket: 'mobilepawlse.appspot.com',
     iosBundleId: 'com.example.pawlse',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCmC92rVome3MRVnmKW_bo0TJpJNl-i3eo',
-    appId: '1:874591227885:ios:01fe4c6bc60f7b3895a1e4',
-    messagingSenderId: '874591227885',
-    projectId: 'pawlse',
-    storageBucket: 'pawlse.appspot.com',
+    apiKey: 'AIzaSyCBy-EWmVKelioADm5PU7A3FtXIWn-iJO0',
+    appId: '1:1057016880885:ios:09118f9fcb4dc68780efbc',
+    messagingSenderId: '1057016880885',
+    projectId: 'mobilepawlse',
+    storageBucket: 'mobilepawlse.appspot.com',
     iosBundleId: 'com.example.pawlse.RunnerTests',
   );
 }

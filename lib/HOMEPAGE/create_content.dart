@@ -13,6 +13,8 @@ class CreatePost extends StatefulWidget {
 }
 
 class _CreatePostState extends State<CreatePost> {
+  TextEditingController tags = TextEditingController();
+  TextEditingController desc = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,9 +56,13 @@ class _CreatePostState extends State<CreatePost> {
                     PetTags(),
                   ],
                 ),
-                const MyTextField(
-                    text: 'Custom Tag/s', lines: 1, hintText: 'Type here...'),
-                const MyTextField(
+                MyTextField(
+                    textcontroller: tags,
+                    text: 'Custom Tag/s',
+                    lines: 1,
+                    hintText: 'Type here...'),
+                MyTextField(
+                  textcontroller: desc,
                   text: 'Description',
                   lines: 1,
                   hintText: 'Type here...',

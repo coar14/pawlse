@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:pawlse/Authentication/auth_methods.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -12,6 +13,11 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   late bool showPass = true;
   late bool check = false;
+  final TextEditingController _fname = TextEditingController();
+  final TextEditingController _lname = TextEditingController();
+  final TextEditingController _uname = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _email = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: [
                           Expanded(
                             child: TextFormField(
+                              controller: _fname,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(14),
@@ -67,6 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           Expanded(
                             child: TextFormField(
+                              controller: _lname,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(14),
@@ -83,6 +91,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 24,
                       ),
                       TextFormField(
+                        controller: _email,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14),
@@ -96,6 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 24,
                       ),
                       TextFormField(
+                        controller: _uname,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(14),
@@ -109,6 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 24,
                       ),
                       TextFormField(
+                        controller: _password,
                         obscureText: showPass,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -187,7 +198,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 color: Colors.white)),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                    onPressed: () {
+                    onPressed: () async {
+                      await AuthMethods().signUpUser(
+                          firstname: _fname.text,
+                          lastname: _lname.text,
+                          email1: _email.text,
+                          username: _uname.text,
+                          password: _password.text);
                       Navigator.pushReplacementNamed(context, 'auth');
                     },
                     child: const Text('Create Account'),

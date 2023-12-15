@@ -12,6 +12,9 @@ class CreateEvent extends StatefulWidget {
 }
 
 class _CreateEventState extends State<CreateEvent> {
+  final TextEditingController time = TextEditingController();
+  final TextEditingController place = TextEditingController();
+  final TextEditingController details = TextEditingController();
   final TextEditingController _date = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -74,16 +77,21 @@ class _CreateEventState extends State<CreateEvent> {
                     )
                   ],
                 ),
-                const MyTextField(
+                MyTextField(
+                    textcontroller: time,
                     text: 'Event Time',
                     lines: 1,
                     hintText: "00:00 AM - 00:00 PM"),
-                const MyTextField(
+                MyTextField(
+                    textcontroller: place,
                     text: 'Event Place',
                     lines: 1,
                     hintText: "Specifiy here..."),
-                const MyTextField(
-                    text: 'Event Details', lines: 1, hintText: "Type here..."),
+                MyTextField(
+                    textcontroller: details,
+                    text: 'Event Details',
+                    lines: 1,
+                    hintText: "Type here..."),
                 const SizedBox(height: 20),
                 const AddPhotos(),
                 SizedBox(height: MediaQuery.of(context).size.height * .05),
